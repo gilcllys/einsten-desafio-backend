@@ -75,7 +75,6 @@ class PacienteViewSet(viewsets.ModelViewSet):
         if genero:
             queryset = queryset.filter(genero=genero)
         if has_esgoto:
-
             queryset = queryset.filter(
                 has_esgoto=has_esgoto)
 
@@ -110,10 +109,10 @@ class SaneamentoInfoViewSet(viewsets.ModelViewSet):
                 agua_potavel=agua_potavel)
         if coleta_lixo:
             queryset = queryset.filter(
-                agua_potavel=coleta_lixo)
+                coleta_lixo=coleta_lixo)
         if instalacoes_sanitarias:
             queryset = queryset.filter(
-                agua_potavel=instalacoes_sanitarias)
+                instalacoes_sanitarias=instalacoes_sanitarias)
 
         # Serializa os dados filtrados e retorna a resposta
         serializer = self.get_serializer(queryset, many=True)
